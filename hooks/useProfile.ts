@@ -24,7 +24,7 @@ export default function useProfile() {
     mutationFn: async (data: UpdateProfileDTO) =>
       updateProfileRequest(userId, data),
     onMutate: async (data) => {
-      console.log(data)
+      console.log(data);
       const { firstName, lastName } = data;
       await queryClient.cancelQueries({ queryKey: [userId, "Profile"] });
       queryClient.setQueryData<UpdateProfileDTO>([userId, "Profile"], {
