@@ -49,13 +49,10 @@ const Settings = () => {
       {
         icon: "person-outline",
         label: "Edit profile",
-        onPress: () => {router.push("/editprofile")}
-        label: "Rediger profil",
         onPress: () => {
-          // Implement edit profile logic here
+          router.push("/editprofile");
         },
       },
-      
     ],
     [logout]
   );
@@ -103,7 +100,7 @@ type RenderSettingProps = {
   item: Setting;
   toggleStates: { [key: string]: boolean };
   handleToggleChange: (label: string, value: boolean) => void;
-  hasInvitations?: boolean; 
+  hasInvitations?: boolean;
 };
 
 const RenderSetting = ({
